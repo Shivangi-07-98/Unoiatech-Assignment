@@ -67,18 +67,47 @@ const CompanyTable = () => {
     }
   };
 
+  
+
   const handleExport = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/api/companies/export');
-      const csvData = response.data;
-      const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.setAttribute('download', 'companies.csv');
-      link.click();
-    } catch (error) {
-      console.error('Error exporting data:', error);
-    }
+    const csvData = rows.map((row) => ({
+      id: row.id,
+      name: row.name,
+      description: row.description,
+      address: row.address,
+      phoneNumber: row.phoneNumber,
+      email: row.email,
+      facebookUrl: row.facebookUrl,
+      twitterUrl: row.twitterUrl,
+      linkedinUrl: row.linkedinUrl,
+      instagramUrl: row.instagramUrl,
+    }));
+
+    const csvRows = [
+      ['ID', 'Company', 'Description', 'Address', 'Phone Number', 'Email', 'Facebook URL', 'Twitter URL', 'LinkedIn URL', 'Instagram URL'], // headers
+      ...csvData.map((row) => [
+        row.id,
+        row.name,
+        row.description,
+        row.address,
+        row.phoneNumber,
+        row.email,
+        row.facebookUrl,
+        row.twitterUrl,
+        row.linkedinUrl,
+        row.instagramUrl,
+      ]),
+    ];
+
+    const csvContent = csvRows.map(e => e.join(",")).join("\n");
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.setAttribute('download', 'companies.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
 
