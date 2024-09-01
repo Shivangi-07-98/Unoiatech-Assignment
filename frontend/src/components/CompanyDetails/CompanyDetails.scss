@@ -1,0 +1,217 @@
+// CompanyDetails.scss
+
+.company-details {
+  padding: 20px;
+
+  .header-section {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .breadcrumb {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+      span{
+        margin: 0 20px;
+      }
+    }
+  }
+
+  .main-content {
+    background-color: #f0f0f0; /* Grayish background */
+    padding: 20px;
+    // display: flex;
+    gap: 20px;
+
+
+    .company-info-up{
+      background-color: #fff;
+    }
+
+    .company-info {
+      width: 60%;
+      display: flex;
+      gap: 20px;
+      flex: 1;
+      padding: 3rem 2rem;
+
+      .company-logo {
+        flex: 1;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .company-description {
+        flex: 2;
+
+        h2 {
+          margin: 0 0 10px;
+          font-size: 27px;
+          font-weight: 700;
+        }
+
+        h3 {
+          margin: 20px 0 10px;
+          font-size: 18px;
+        }
+
+        p {
+          margin: 0;
+          i {
+            margin-right: 10px;
+            padding: 5px;
+            color: teal;
+          }
+        }
+      }
+
+      .company-contact {
+        flex: 1;
+        p {
+          margin: 10px 0;
+          font-size: 14px;
+
+          i {
+            margin-right: 10px;
+            padding: 5px;
+            color: teal;
+          }
+        }
+      }
+    }
+
+    .lower-content {
+      display: flex;
+      margin-top: 20px;
+      gap: 20px;
+
+      .screenshot-placeholder {
+        flex: 7;
+        padding: 15px;
+        background-color: #fff;
+        text-align: center;
+
+        h3 {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .screenshot-box {
+          background-color: #ddd;
+          height: 600px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #999;
+        }
+      }
+
+      .company-extra-details {
+        flex: 3;
+        background-color: #fff;
+        padding: 15px;
+        
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+
+        p {
+          margin: 10px 0;
+          font-size: 14px;
+
+          i {
+            margin-right: 10px;
+            padding: 5px;
+            color: teal;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Add this to your CompanyDetails.scss file
+
+@media(max-width: 500px){
+  .header-section {
+    .table-controls {
+      display: flex;
+      flex-direction: column; // Stack the items vertically on mobile
+      align-items: flex-start; // Align items to start for better spacing
+
+      .search-input-container {
+        // width: 100%; // Ensure it takes the full width
+        margin-bottom: 10px; // Add some spacing
+      }
+
+      .fetch-details-btn {
+        // width: 100%; // Full width for the button
+      }
+    }
+
+    .breadcrumb {
+      font-size: 16px; // Adjust font size for smaller screens
+    }
+  }
+}
+
+
+// Add this to your CompanyDetails.scss file
+
+@media (max-width: 768px) {
+  
+  .main-content {
+    .company-info-up {
+      padding: 1rem; // Reduce padding for mobile screens
+    }
+
+    .company-info {
+      flex-direction: column; // Stack columns vertically on smaller screens
+      gap: 10px; // Reduce gap between items
+      padding: 1rem 0; // Reduce padding for better spacing on mobile
+      min-width: 100%;
+
+
+      .company-logo {
+        width: 100%;
+        img {
+          width: auto; // Ensure logo maintains its aspect ratio
+          // max-width: 150px; // Adjust max width if needed, but do not reduce the logo size drastically
+          height: auto; // Maintain the height aspect ratio
+        }
+      }
+
+      .company-description,
+      .company-contact {
+        flex: none; // Remove flex properties to stack vertically
+        padding: 0; // Remove extra padding
+      }
+    }
+    
+    .lower-content {
+      flex-direction: column; // Stack lower content sections vertically
+      gap: 20px;
+
+      .screenshot-placeholder {
+        width: 100%; // Full width
+        height: auto; // Adjust height as needed for placeholder
+      }
+
+      .company-extra-details {
+        width: 100%; // Full width
+      }
+    }
+  }
+}

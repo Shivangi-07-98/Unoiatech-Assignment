@@ -1,0 +1,275 @@
+// body {
+//   font-family: 'Helvetica', sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   background-color: #f4f4f4;
+// }
+
+// .company-table-container {
+//   padding: 20px;
+//   max-width: 1200px;
+//   margin: 1rem auto;
+//   background-color: #ffffff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   border-radius: 8px;
+// }
+
+// .table-controls,
+// .selection-controls {
+//   display: flex;
+//   align-items: center;
+//   gap: 15px;
+//   margin-bottom: 20px;
+//   flex-wrap: wrap; // Allow wrapping on smaller screens
+// }
+
+// .search-input-container {
+//   position: relative;
+//   flex: 1;
+// }
+
+// .search-input {
+//   background-color: rgb(237, 235, 235);
+//   padding: 8px;
+//   font-size: 14px;
+//   border-radius: 5px;
+//   border: 1px solid #ddd;
+//   padding-right: 30px; /* Add padding for the icon space */
+// }
+
+// .search-icon {
+//   position: absolute;
+//   right: 10px; /* Position it on the right side */
+//   top: 50%;
+//   transform: translateY(-50%);
+//   font-size: 16px;
+//   color: #aaa;
+// }
+
+// .fetch-details-btn,
+// .save-details-btn {
+//   color: #6c5ce7;
+//   background-color: #f3eaff;
+//   padding: 8px 25px;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+// }
+
+// .fetch-details-btn:hover,
+// .save-details-btn:hover {
+//   background-color: #e6d3ff;
+// }
+
+// .delete-btn,
+// .export-csv-btn {
+//   padding: 6px 15px;
+//   border-radius: 5px;
+//   border: 1px solid #ddd;
+//   background-color: white;
+//   cursor: pointer;
+//   color: #6c5ce7;
+//   transition: background-color 0.3s, color 0.3s;
+// }
+
+// .delete-btn:hover,
+// .export-csv-btn:hover {
+//   background-color: #6c5ce7;
+//   color: white;
+// }
+
+// .delete-btn:disabled,
+// .export-csv-btn:disabled {
+//   background-color: #f0f0f0;
+//   cursor: not-allowed;
+//   color: #ddd;
+//   border-color: #ddd;
+// }
+
+// /* New button for exporting all records, always highlighted */
+// .export-all-csv-btn {
+//   padding: 6px 15px;
+//   border-radius: 5px;
+//   border: 1px solid #ddd;
+//   background-color: #6c5ce7; /* Always highlighted */
+//   color: white; /* White text color to match the highlighted state */
+//   cursor: pointer;
+//   transition: background-color 0.3s, color 0.3s;
+// }
+
+// .export-all-csv-btn:hover {
+//   background-color: #4a3fbf; /* Slightly darker blue on hover */
+// }
+
+// .company-table {
+//   width: 100%;
+//   border-collapse: collapse;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+//   font-size: 14px;
+// }
+
+// .company-table th,
+// .company-table td {
+//   padding: 10px;
+//   text-align: left;
+//   border-bottom: 1px solid #ddd;
+//   white-space: nowrap;
+// }
+
+// .checkbox {
+//   margin: auto;
+//   height: 20px;
+//   width: 20px;
+// }
+
+// .company-table th {
+//   background-color: #f7f7f7;
+//   font-weight: bold;
+// }
+
+// .company-logo {
+//   width: 30px;
+//   height: 30px;
+//   border-radius: 20%;
+//   margin-right: 10px;
+//   vertical-align: middle;
+// }
+
+// .company-cell {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .social-profiles {
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+// }
+
+// .social-profiles a {
+//   color: #6c5ce7;
+//   font-size: 16px;
+//   transition: color 0.3s;
+// }
+
+// .social-profiles a:hover {
+//   color: #4a3fbf;
+// }
+
+// .email-cell a {
+//   color: #333;
+//   text-decoration: none;
+//   transition: color 0.3s;
+// }
+
+// .email-cell a:hover {
+//   color: #6c5ce7;
+// }
+
+// .view-btn {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   color: #6c5ce7;
+//   font-size: 16px;
+//   transition: color 0.3s;
+// }
+
+// .view-btn:hover {
+//   margin: auto;
+//   color: #4a3fbf;
+// }
+
+// .pagination {
+//   margin: auto;
+// }
+
+// /* Responsive styles */
+// @media (max-width: 1200px) {
+//   .company-table-container {
+//     padding: 15px;
+//   }
+
+//   .fetch-details-btn,
+//   .save-details-btn,
+//   .delete-btn,
+//   .export-csv-btn,
+//   .export-all-csv-btn {
+//     padding: 6px 15px;
+//     font-size: 12px;
+//   }
+// }
+
+// @media (max-width: 992px) {
+//   .company-table {
+//     font-size: 12px;
+//   }
+
+//   .company-logo {
+//     width: 25px;
+//     height: 25px;
+//   }
+
+//   .social-profiles a {
+//     font-size: 14px;
+//   }
+
+//   .description-text {
+//     -webkit-line-clamp: 3; // Allow more lines on medium screens
+//     max-height: 4.5em; // Adjust max-height accordingly
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .table-controls,
+//   .selection-controls {
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+
+//   .search-input {
+//     width: 100%;
+//     margin-bottom: 10px;
+//   }
+
+//   .fetch-details-btn,
+//   .save-details-btn,
+//   .delete-btn,
+//   .export-csv-btn,
+//   .export-all-csv-btn {
+//     width: 100%;
+//     margin-bottom: 10px;
+//     text-align: center;
+//   }
+
+//   .description-text {
+//     -webkit-line-clamp: 5; // Allow more lines on small screens
+//     max-height: 7.5em; // Adjust max-height accordingly
+//   }
+
+//   .company-table th,
+//   .company-table td {
+//     display: block;
+//     width: 100%;
+//     box-sizing: border-box;
+//   }
+
+//   .company-table th,
+//   .company-table td {
+//     padding: 10px 5px;
+//     text-align: left;
+//   }
+
+//   .company-table td {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+
+//   .description-container {
+//     position: static; 
+//     margin-bottom: 10px;
+//   }
+// }
