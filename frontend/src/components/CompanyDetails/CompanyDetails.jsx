@@ -7,7 +7,6 @@ import './CompanyDetails.scss';
 const CompanyDetails = () => {
   const location = useLocation();
   const company_id = location.state.get_ids || {};
-console.log(company_id);
 
   return (
     <div className="company-details">
@@ -50,7 +49,12 @@ console.log(company_id);
           <div className="screenshot-placeholder">
             <h3><i className="fas fa-image"></i> Screenshot of Webpage</h3>
             <div className="screenshot-box">
-              {company_id.screenshotUrl && <img src={company_id.screenshotUrl} alt="Screenshot" />}
+              {company_id?.screenshot && (
+                <img
+                  src={`http://localhost:5000/${company_id?.screenshot}`} // Adjust the base URL if necessary
+                  alt="Screenshot"
+                />
+              )}
             </div>
           </div>
         </div>
