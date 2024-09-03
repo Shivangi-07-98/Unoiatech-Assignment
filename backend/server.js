@@ -7,35 +7,9 @@ const path = require('path');
 const companyRoutes = require('./router/scrapeRouter');
 
 const app = express();
-app.use(express.json())
 
 app.use(bodyParser.json());
-
-// app.use(cors(
-//   {
-//     origin: ["https://unoiatech-assignment-frontend.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true
-//   }
-// ));
-
-
-
-// Define the CORS options
-const corsOptions = {
-  origin: ["https://unoiatech-assignment-frontend.vercel.app"],
-  methods: ["POST", "GET", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],  // Add any other headers you might be using
-  credentials: true,  // Allow cookies/auth tokens
-};
-
-// Use the CORS middleware
-app.use(cors(corsOptions));
-
-// Ensure you handle OPTIONS requests
-app.options('*', cors(corsOptions));
-
-
+app.use(cors());
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 

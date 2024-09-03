@@ -30,7 +30,7 @@ const CompanyTable = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await axios.get('/api/companies');
+      const response = await axios.get('http://localhost:5000/api/companies');
       const data = response.data.map((company) => ({
         id: company._id,
         name: company.name,
@@ -53,7 +53,7 @@ const CompanyTable = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete('/api/companies', {
+      const response = await axios.delete('http://localhost:5000/api/companies', {
         data: { ids: selectedRows },
       });
       if (response.status !== 200) {
@@ -210,7 +210,7 @@ const CompanyTable = () => {
 
   const handlePostFetch = async () => {
     try {
-      const response = await axios.post('/api/scrape', {
+      const response = await axios.post('http://localhost:5000/api/scrape', {
         url: search,
       });
       fetchCompanies()
