@@ -51,7 +51,7 @@ const CompanyDetails = () => {
             <div className="screenshot-box">
               {company_id?.screenshot && (
                 <img
-                  src={`http://localhost:5000/${company_id?.screenshot}`} // Adjust the base URL if necessary
+                  src={`https://unoiatech-assignment-backend.vercel.app/${company_id?.screenshot}`} // Adjust the base URL if necessary
                   alt="Screenshot"
                 />
               )}
