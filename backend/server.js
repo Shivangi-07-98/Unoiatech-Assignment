@@ -35,7 +35,14 @@ app.use(cors(corsOptions));
 // Ensure you handle OPTIONS requests
 app.options('*', cors(corsOptions));
 
-
+// CORS headers configuration
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://unoiatech-assignment-frontend.vercel.app"); // Allows requests from your frontend domain
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT"); // Specifies allowed HTTP methods
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization"); // Specifies allowed headers
+  res.header("Access-Control-Allow-Credentials", "true"); // If you need to allow cookies or authentication headers
+  next();
+});
 
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
