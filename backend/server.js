@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(cors(
   {
-    origin: [""],
+    origin: ["https://unoiatech-assignment-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true
   }
