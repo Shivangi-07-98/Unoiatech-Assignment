@@ -24,9 +24,8 @@
   }
 
   .main-content {
-    background-color: #f0f0f0; /* Grayish background */
+    background-color: #f0f0f0; 
     padding: 20px;
-    // display: flex;
     gap: 20px;
 
 
@@ -142,75 +141,70 @@
 }
 
 
-// Add this to your CompanyDetails.scss file
 
 @media(max-width: 500px){
   .header-section {
     .table-controls {
       display: flex;
-      flex-direction: column; // Stack the items vertically on mobile
-      align-items: flex-start; // Align items to start for better spacing
+      flex-direction: column; 
+      align-items: flex-start; 
 
       .search-input-container {
-        // width: 100%; // Ensure it takes the full width
-        margin-bottom: 10px; // Add some spacing
+        margin-bottom: 10px; 
       }
 
       .fetch-details-btn {
-        // width: 100%; // Full width for the button
       }
     }
 
     .breadcrumb {
-      font-size: 16px; // Adjust font size for smaller screens
+      font-size: 16px; 
     }
   }
 }
 
 
-// Add this to your CompanyDetails.scss file
 
 @media (max-width: 768px) {
   
   .main-content {
     .company-info-up {
-      padding: 1rem; // Reduce padding for mobile screens
+      padding: 1rem; 
     }
 
     .company-info {
-      flex-direction: column; // Stack columns vertically on smaller screens
-      gap: 10px; // Reduce gap between items
-      padding: 1rem 0; // Reduce padding for better spacing on mobile
+      flex-direction: column; 
+      gap: 10px; 
+      padding: 1rem 0; 
       min-width: 100%;
 
 
       .company-logo {
         width: 100%;
         img {
-          width: auto; // Ensure logo maintains its aspect ratio
-          // max-width: 150px; // Adjust max width if needed, but do not reduce the logo size drastically
-          height: auto; // Maintain the height aspect ratio
+          width: auto;
+          height: auto; 
         }
       }
 
       .company-description,
       .company-contact {
-        flex: none; // Remove flex properties to stack vertically
-        padding: 0; // Remove extra padding
+        flex: none; 
+        padding: 0;
       }
     }
     
     .lower-content {
-      flex-direction: column; // Stack lower content sections vertically
+      flex-direction: column; 
       gap: 20px;
 
       .screenshot-placeholder {
-        width: 100%; // Full width
-        height: auto; // Adjust height as needed for placeholder
+        width: 100%; 
+        height: auto; 
       }
 
       .company-extra-details {
-        width: 100%; // Full width
+        width: 100%; 
       }
     }
   }

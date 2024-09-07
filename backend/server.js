@@ -4,14 +4,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const companyRoutes = require('./router/scrapeRouter');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); //
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -20,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('MongoDB connected...'))
 .catch((err) => console.error('MongoDB connection error:', err));
 
+const companyRoutes = require('./router/scrapeRouter');
 app.use('/api', companyRoutes);
 
 const port = process.env.PORT || 5000;

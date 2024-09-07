@@ -1,4 +1,5 @@
 import React from 'react';
+// import './CompanyTable.scss'
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
@@ -7,15 +8,15 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import TextField from '@mui/material/TextField';
 import { AppBar, Box, Card, CardContent, InputAdornment, Toolbar, Typography } from '@mui/material';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
-const paginationModel = { page: 0, pageSize: 5 };
+const paginationModel = { page: 0, pageSize: 10 };
 
 const CompanyTable = () => {
   const [rows, setRows] = React.useState([]);
@@ -66,8 +67,6 @@ const CompanyTable = () => {
       console.error('Error deleting rows:', error);
     }
   };
-
-  
 
   const handleExport = async () => {
     const csvData = rows.map((row) => ({
