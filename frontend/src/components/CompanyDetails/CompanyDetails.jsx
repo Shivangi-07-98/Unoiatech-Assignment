@@ -1,5 +1,3 @@
-// CompanyDetails.js
-
 import React from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import './CompanyDetails.scss';
@@ -51,7 +49,7 @@ const CompanyDetails = () => {
             <div className="screenshot-box">
               {company_id?.screenshot && (
                 <img
-                  src={`http://localhost:5000/${company_id?.screenshot}`} // Adjust the base URL if necessary
+                  src={`http://localhost:5000/${company_id?.screenshot}`} 
                   alt="Screenshot"
                 />
               )}

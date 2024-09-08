@@ -18,7 +18,8 @@ exports.handleFileUpload = async (req, res) => {
     await newCompany.save();
 
     res.status(200).json({ message: 'File uploaded successfully.', file: req.file });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Failed to upload file.' });
   }
@@ -72,7 +73,8 @@ exports.getAllCompanies = async (req, res) => {
   try {
     const companies = await Company.find({});
     res.status(200).json(companies);
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Failed to fetch companies.' });
   }
@@ -83,7 +85,8 @@ exports.deleteCompanies = async (req, res) => {
   try {
     await Company.deleteMany({ _id: { $in: ids } });
     res.status(200).json({ message: 'Companies deleted successfully.' });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Failed to delete companies.' });
   }
@@ -99,7 +102,8 @@ exports.downloadCompaniesCSV = async (req, res) => {
     res.header('Content-Type', 'text/csv');
     res.attachment('companies.csv');
     res.status(200).send(csv);
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Failed to generate CSV.' });
   }
